@@ -1,4 +1,3 @@
-/* TODO - add your code to create a functional React component that renders a login form  */
 import { useState } from "react";
 export default function Authenticate({ token }) {
   const [successMessage, setSuccessMessage] = useState(null);
@@ -7,8 +6,8 @@ export default function Authenticate({ token }) {
   async function handleClick() {
     console.log(token);
     try {
-      const response = await fetch("/api/users/login", {
-        method: "POST",
+      const response = await fetch("/api/users", {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
