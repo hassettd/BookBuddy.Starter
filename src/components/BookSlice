@@ -1,0 +1,27 @@
+import { api } from ".././App/api";
+import { createSlice } from "@reduxjs/toolkit";
+
+const userApi = api.injectEndpoints({
+  endpoints: (builder) => ({
+    getUser: builder.query({
+      query: (id) => ({
+        url: `/user/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["Books"],
+    }),
+    updateUser: builder.mutation({
+      query: ({ id, email }) => ({
+        url: `/books/${id}`,
+        method: "PUT",
+        body: {
+          email,
+        },
+      }),
+      providesTags: ["Books"],
+    }),
+  }),
+});
+
+export const { useGetBookQuery, useUpdateBookMutation } = api;
+export default api;

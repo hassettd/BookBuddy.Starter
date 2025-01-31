@@ -1,28 +1,28 @@
 /* TODO - add your code to create a functional React component that renders a registration form */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import React from "react";
 
-export default function SignUpForm({ token, setToken }) {
+function Register({ token, setToken }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const submit = async (e) => {
     e.preventDefault();
-    // const response = await fetch("http://localhost:3000/api/register", {
-    //     method: "Post",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       email: form.email,
-    //       password: form.password,
-    //     }),
-    //   });
-    //   const data = await response.json();
+    const response = await fetch("http://localhost:3000/api/register", {
+      method: "Post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: form.email,
+        password: form.password,
+      }),
+    });
+    const data = await response.json();
     try {
       const response = await fetch(
-        "https://fsa-jwt-practice.herokuapp.com/signup",
+        "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/",
         {
           method: "Post",
           headers: {
@@ -77,3 +77,4 @@ export default function SignUpForm({ token, setToken }) {
     </div>
   );
 }
+export default Register;

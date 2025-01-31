@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function Authenticate({ token }) {
+function Authenticate({ token }) {
   const [successMessage, setSuccessMessage] = useState(null);
   const [error, setError] = useState(null);
 
@@ -31,3 +31,4 @@ export default function Authenticate({ token }) {
     </div>
   );
 }
+export default Authenticate;
