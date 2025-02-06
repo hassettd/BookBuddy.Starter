@@ -4,7 +4,15 @@ body {
   margin: 0;
   padding: 0;
 }
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
 
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
 #logo-image {
   width: 30px;
   margin-right: 10px;
